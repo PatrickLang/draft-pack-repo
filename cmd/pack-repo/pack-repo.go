@@ -63,6 +63,7 @@ func debug(format string, args ...interface{}) {
 func main() {
 	cmd := newRootCmd(os.Stdout, os.Stdin)
 	if err := cmd.Execute(); err != nil {
+		fmt.Printf("Detailed error: %s", err)
 		os.Exit(1)
 	}
 }
